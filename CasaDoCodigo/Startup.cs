@@ -38,16 +38,14 @@ namespace CasaDoCodigo
             services.AddTransient<IPedidoRepository, PedidoRepository>();
             services.AddTransient<ICadastroRepository, CadastroRepository>();
             services.AddTransient<IItemPedidoRepository, ItemPedidoRepository>();
-
+            services.AddTransient<ICategoriaRepository, CategoriaRepository>();
         }
 
 
         // Este método é chamado pelo runtime.
         // Use este método para configurar o pipeline de requisições HTTP.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env,
-            IServiceProvider serviceProvider)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
         {
-
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
