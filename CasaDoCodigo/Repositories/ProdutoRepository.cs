@@ -19,7 +19,12 @@ namespace CasaDoCodigo.Repositories
 
         public IList<Produto> GetProdutos()
         {
-            return dbSet.ToList();
+            return dbSet.Include(x => x.Categoria).ToList();
+        }
+
+        public async Task<IList<Produto>> GetProdutos(string pesquisa)
+        {
+            return await dbSet.Include(x => x.Categoria).Where(x => EF.Functions.Like(x.Nome, $"%{pesquisa}%") || EF.Functions.Like(x.Categoria.Nome, $"%{pesquisa}%")).ToListAsync();
         }
 
         public async Task SaveProdutos(List<Livro> livros)
