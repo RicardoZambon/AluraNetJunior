@@ -15,16 +15,20 @@ namespace CasaDoCodigo.Controllers
         private readonly IPedidoRepository pedidoRepository;
         private readonly IItemPedidoRepository itemPedidoRepository;
 
-        public PedidoController(IProdutoRepository produtoRepository,
-            IPedidoRepository pedidoRepository,
-            IItemPedidoRepository itemPedidoRepository)
+        public PedidoController(IProdutoRepository produtoRepository, IPedidoRepository pedidoRepository, IItemPedidoRepository itemPedidoRepository)
         {
             this.produtoRepository = produtoRepository;
             this.pedidoRepository = pedidoRepository;
             this.itemPedidoRepository = itemPedidoRepository;
         }
 
+
         public IActionResult Carrossel()
+        {
+            return View(produtoRepository.GetProdutos());
+        }
+
+        public IActionResult BuscaDeProdutos()
         {
             return View(produtoRepository.GetProdutos());
         }
