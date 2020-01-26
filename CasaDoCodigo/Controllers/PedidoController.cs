@@ -29,13 +29,13 @@ namespace CasaDoCodigo.Controllers
         }
 
         [HttpGet]
-        public IActionResult BuscaDeProdutos()
+        public IActionResult BuscaProdutos()
         {
             return View(new PesquisaViewModel(produtoRepository.GetProdutos()));
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        public async Task<IActionResult> BuscaDeProdutos(string pesquisa)
+        public async Task<IActionResult> BuscaProdutos(string pesquisa)
         {
             IList<Produto> produtos;
             if (!string.IsNullOrEmpty(pesquisa))

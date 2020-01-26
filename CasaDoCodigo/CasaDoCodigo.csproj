@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Pedido\BuscaDeProdutos.cshtml" />
+    <Content Remove="Views\Pedido\BuscaProdutos.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,7 +36,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Pedido\BuscaDeProdutos.cshtml" />
+    <None Include="Views\Pedido\BuscaProdutos.cshtml" />
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
