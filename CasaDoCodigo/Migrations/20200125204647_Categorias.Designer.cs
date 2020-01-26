@@ -11,8 +11,8 @@ using System;
 namespace CasaDoCodigo.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20200125204647_Categoria")]
-    partial class Categoria
+    [Migration("20200125204647_Categorias")]
+    partial class Categorias
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

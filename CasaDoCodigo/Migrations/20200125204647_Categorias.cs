@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace CasaDoCodigo.Migrations
 {
-    public partial class Categoria : Migration
+    public partial class Categorias : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

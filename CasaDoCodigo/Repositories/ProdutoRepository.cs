@@ -36,7 +36,7 @@ namespace CasaDoCodigo.Repositories
                 {
                     await categoriaRepository.SaveCategoria(livro.Categoria);
 
-                    dbSet.Add(new Produto(livro.Codigo, livro.Nome, livro.Preco, categoriaRepository.GetCategoria(livro.Categoria)));
+                    dbSet.Add(new Produto(livro.Codigo, livro.Nome, livro.Preco, await categoriaRepository.GetCategoria(livro.Categoria)));
                 }
             }
             await contexto.SaveChangesAsync();
